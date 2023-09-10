@@ -1,0 +1,109 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{suicideVOZ}
+\selectlanguageifdefined{russian}
+Suicide: facts and figures globally [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.who.int/publications/i/item/WHO-MSD-UCN-MHE-22.03} (дата
+  обращения 08.05.2023).
+
+\bibitem{alimobSuicide}
+\selectlanguageifdefined{russian}
+Алимов~А.О.~Алимова~Н.И. СОВРЕМЕННОЕ
+  СОСТОЯНИЕ ИССЛЕДОВАНИЙ РИСКА
+  СУИЦИДАЛЬНОГО ПОВЕДЕНИЯ ЛИЧНОСТИ~// МНИЖ.
+\newblock 2023.
+\newblock {№}~1.
+
+\bibitem{Kasyanov}
+\selectlanguageifdefined{russian}
+В.В.~Касьянов. Суицидальное поведение.
+\newblock М.: Юрайт, 2019.
+\newblock {с.}~330.
+
+\bibitem{presuicidalSignals}
+\selectlanguageifdefined{russian}
+Буянов~И.~Соченков~И. СОВРЕМЕННОЕ СОСТОЯНИЕ
+  ИССЛЕДОВАНИЙ РИСКА СУИЦИДАЛЬНОГО
+  ПОВЕДЕНИЯ ЛИЧНОСТИ~// Computational Linguistics and
+  Intellectual Technologies: Proceedings of the International Conference
+  “Dialogue 2022”.
+\newblock 2022.
+
+\bibitem{bert}
+\selectlanguageifdefined{russian}
+Cornell University arxiv [Электронный ресурс].
+\newblock Режим доступа: \url{https://arxiv.org/abs/1810.04805v2}
+  (дата обращения 10.05.2023).
+
+\bibitem{word2vec}
+\selectlanguageifdefined{russian}
+Tomas~Mikolov~Kai~Chen~Greg Corrado Jeffrey~Dean.
+\newblock 2013.
+
+\bibitem{boosting}
+\selectlanguageifdefined{russian}
+Gradient Boosting and XGBoost [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://medium.com/@gabrieltseng/gradient-boosting-and-xgboost-c306c1bcfaf5}
+  (дата обращения 10.05.2023).
+
+\bibitem{svm}
+\selectlanguageifdefined{russian}
+Support Vector Machines: A Simple Tutorial [Электронный
+  ресурс].
+\newblock Режим доступа: \url{https://svmtutorial.online/}
+  (дата обращения 10.05.2023).
+
+\bibitem{randomforest}
+\selectlanguageifdefined{russian}
+Open Machine Learning Course. Topic 5. Bagging and Random Forest
+  [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://medium.com/open-machine-learning-course/open-machine-learning-course-topic-5-ensembles-of-algorithms-and-random-forest-8e05246cbba7}
+  (дата обращения 10.05.2023).
+
+\bibitem{Python}
+\selectlanguageifdefined{russian}
+Python official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://www.python.org/} (дата
+  обращения 10.05.2023).
+
+\bibitem{pandas}
+\selectlanguageifdefined{russian}
+Pandas official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://pandas.pydata.org/} (дата
+  обращения 10.05.2023).
+
+\bibitem{numpy}
+\selectlanguageifdefined{russian}
+Numpy official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://numpy.org/} (дата
+  обращения 10.05.2023).
+
+\bibitem{matplotlib}
+\selectlanguageifdefined{russian}
+Matplotlib official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://matplotlib.org/} (дата
+  обращения 10.05.2023).
+
+\bibitem{sklearn}
+\selectlanguageifdefined{russian}
+Scikit-learn official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://scikit-learn.org/stable/}
+  (дата обращения 10.05.2023).
+
+\bibitem{torch}
+\selectlanguageifdefined{russian}
+Pythorch official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://pytorch.org/} (дата
+  обращения 10.05.2023).
+
+\end{thebibliography}

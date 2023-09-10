@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: 03-intro.aux
+A level-1 auxiliary file: 10-analysis.aux
+A level-1 auxiliary file: 50-conclusion.aux
+A level-1 auxiliary file: 60-bibliography.aux
+The style file: utf8gost705u.bst
+Database file #1: biblio.bib
+I was expecting a `,' or a `}'---line 6 of file biblio.bib
+ :     
+ :     title = {Efficient Estimation of Word Representations in Vector Space}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1510 of file utf8gost705u.bst
+Warning--empty title in word2vec
+Warning--empty journal in word2vec
+You've used 15 entries,
+            2958 wiz_defined-function locations,
+            727 strings with 8066 characters,
+and the built_in function-call counts, 2126 in all, are:
+= -- 236
+> -- 31
+< -- 4
++ -- 19
+- -- 4
+* -- 39
+:= -- 214
+add.period$ -- 35
+call.type$ -- 15
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 128
+empty$ -- 282
+format.name$ -- 4
+if$ -- 554
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 0
+newline$ -- 87
+num.names$ -- 12
+pop$ -- 102
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 54
+stack$ -- 0
+substring$ -- 6
+swap$ -- 57
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 5
+width$ -- 17
+write$ -- 186
+(There were 2 error messages)

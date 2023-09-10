@@ -4,3 +4,5 @@
 *.loc
 *.toc
 *.aux
+*.synctex*
+
