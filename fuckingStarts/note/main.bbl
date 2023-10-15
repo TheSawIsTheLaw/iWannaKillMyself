@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -14,13 +14,29 @@ Suicide: facts and figures globally [Электронный ресурс].
   \url{https://www.who.int/publications/i/item/WHO-MSD-UCN-MHE-22.03} (дата
   обращения 08.05.2023).
 
-\bibitem{alimobSuicide}
+\bibitem{fuckingSuicideDefinition}
 \selectlanguageifdefined{russian}
-Алимов~А.О.~Алимова~Н.И. СОВРЕМЕННОЕ
-  СОСТОЯНИЕ ИССЛЕДОВАНИЙ РИСКА
-  СУИЦИДАЛЬНОГО ПОВЕДЕНИЯ ЛИЧНОСТИ~// МНИЖ.
-\newblock 2023.
-\newblock {№}~1.
+Cambridge Dictionary [Электронный ресурс].
+\newblock Режим доступа:
+  \url{hhttps://dictionary.cambridge.org/dictionary/english/suicide} (дата
+  обращения 08.05.2023).
+
+\bibitem{suicideVOZDouble}
+\selectlanguageifdefined{russian}
+WHO: Suicide [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.who.int/news-room/fact-sheets/detail/suicide#:~:text=Key%20facts,suicide%20in%20the%20general%20population.}
+  (дата обращения 08.05.2023).
+
+\bibitem{suicidalContent}
+\selectlanguageifdefined{russian}
+Брябрина~Т.В.~Гиберт~А.И.~Штрахова~А.В. Опыт
+  контент-анализа суицидальных
+  высказываний в сети Интернет лиц с
+  различным уровнем суицидальной
+  активности~// Психология. Психофизиология.
+\newblock 2016.
+\newblock {№}~3.
 
 \bibitem{Kasyanov}
 \selectlanguageifdefined{russian}
@@ -28,82 +44,25 @@ Suicide: facts and figures globally [Электронный ресурс].
 \newblock М.: Юрайт, 2019.
 \newblock {с.}~330.
 
-\bibitem{presuicidalSignals}
+\bibitem{suicideStats}
 \selectlanguageifdefined{russian}
-Буянов~И.~Соченков~И. СОВРЕМЕННОЕ СОСТОЯНИЕ
-  ИССЛЕДОВАНИЙ РИСКА СУИЦИДАЛЬНОГО
-  ПОВЕДЕНИЯ ЛИЧНОСТИ~// Computational Linguistics and
-  Intellectual Technologies: Proceedings of the International Conference
-  “Dialogue 2022”.
-\newblock 2022.
-
-\bibitem{bert}
-\selectlanguageifdefined{russian}
-Cornell University arxiv [Электронный ресурс].
-\newblock Режим доступа: \url{https://arxiv.org/abs/1810.04805v2}
-  (дата обращения 10.05.2023).
-
-\bibitem{word2vec}
-\selectlanguageifdefined{russian}
-Tomas~Mikolov~Kai~Chen~Greg Corrado Jeffrey~Dean.
-\newblock 2013.
-
-\bibitem{boosting}
-\selectlanguageifdefined{russian}
-Gradient Boosting and XGBoost [Электронный ресурс].
-\newblock Режим доступа:
-  \url{https://medium.com/@gabrieltseng/gradient-boosting-and-xgboost-c306c1bcfaf5}
-  (дата обращения 10.05.2023).
-
-\bibitem{svm}
-\selectlanguageifdefined{russian}
-Support Vector Machines: A Simple Tutorial [Электронный
-  ресурс].
-\newblock Режим доступа: \url{https://svmtutorial.online/}
-  (дата обращения 10.05.2023).
-
-\bibitem{randomforest}
-\selectlanguageifdefined{russian}
-Open Machine Learning Course. Topic 5. Bagging and Random Forest
+Centers for Desiase Control and Prevention: Suicide Prevention
   [Электронный ресурс].
+\newblock Режим доступа: \url{https://www.cdc.gov/suicide}
+  (дата обращения 08.09.2023).
+
+\bibitem{stressAndPatology}
+\selectlanguageifdefined{russian}
+Г.В.~Порядина. Стресс и патология: учеб.
+  пособие.
+\newblock М.: РГМУ, 2009.
+\newblock {с.}~23.
+
+\bibitem{dataset}
+\selectlanguageifdefined{russian}
+Mendeley Data: Dataset for presuicidal signal detection.
 \newblock Режим доступа:
-  \url{https://medium.com/open-machine-learning-course/open-machine-learning-course-topic-5-ensembles-of-algorithms-and-random-forest-8e05246cbba7}
-  (дата обращения 10.05.2023).
-
-\bibitem{Python}
-\selectlanguageifdefined{russian}
-Python official page [Электронный ресурс].
-\newblock Режим доступа: \url{https://www.python.org/} (дата
-  обращения 10.05.2023).
-
-\bibitem{pandas}
-\selectlanguageifdefined{russian}
-Pandas official page [Электронный ресурс].
-\newblock Режим доступа: \url{https://pandas.pydata.org/} (дата
-  обращения 10.05.2023).
-
-\bibitem{numpy}
-\selectlanguageifdefined{russian}
-Numpy official page [Электронный ресурс].
-\newblock Режим доступа: \url{https://numpy.org/} (дата
-  обращения 10.05.2023).
-
-\bibitem{matplotlib}
-\selectlanguageifdefined{russian}
-Matplotlib official page [Электронный ресурс].
-\newblock Режим доступа: \url{https://matplotlib.org/} (дата
-  обращения 10.05.2023).
-
-\bibitem{sklearn}
-\selectlanguageifdefined{russian}
-Scikit-learn official page [Электронный ресурс].
-\newblock Режим доступа: \url{https://scikit-learn.org/stable/}
-  (дата обращения 10.05.2023).
-
-\bibitem{torch}
-\selectlanguageifdefined{russian}
-Pythorch official page [Электронный ресурс].
-\newblock Режим доступа: \url{https://pytorch.org/} (дата
-  обращения 10.05.2023).
+  \url{https://data.mendeley.com/datasets/86v3z38dc7/1} (дата
+  обращения 11.09.2023).
 
 \end{thebibliography}
