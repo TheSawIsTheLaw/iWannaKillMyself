@@ -65,4 +65,10 @@ Mendeley Data: Dataset for presuicidal signal detection.
   \url{https://data.mendeley.com/datasets/86v3z38dc7/1} (дата
   обращения 11.09.2023).
 
+\bibitem{fzpers}
+\selectlanguageifdefined{russian}
+Федеральный закон от 27.07.2006 г. № 152-ФЗ ``О
+  персональных данных''~// СПС
+  ``КонсультантПлюс''.
+
 \end{thebibliography}
