@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -70,5 +70,67 @@ Mendeley Data: Dataset for presuicidal signal detection.
 Федеральный закон от 27.07.2006 г. № 152-ФЗ ``О
   персональных данных''~// СПС
   ``КонсультантПлюс''.
+
+\bibitem{pythonTelegram}
+\selectlanguageifdefined{russian}
+Python-telegram-bot official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://python-telegram-bot.org/}
+  (дата обращения 10.12.2023).
+
+\bibitem{telebot}
+\selectlanguageifdefined{russian}
+Telebot documentation [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://pytba.readthedocs.io/en/latest/} (дата обращения
+  10.12.2023).
+
+\bibitem{nodeTelegram}
+\selectlanguageifdefined{russian}
+Официальная страница модуля node-telegram-bot-api
+  [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.npmjs.com/package/node-telegram-bot-api} (дата
+  обращения 10.12.2023).
+
+\bibitem{kotlinTelegram}
+\selectlanguageifdefined{russian}
+Репозиторий проекта kotlin-telegram-bot
+  [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://github.com/kotlin-telegram-bot/kotlin-telegram-bot} (дата
+  обращения 10.12.2023).
+
+\bibitem{Python}
+\selectlanguageifdefined{russian}
+Python official page [Электронный ресурс].
+\newblock Режим доступа: \url{https://www.python.org/} (дата
+  обращения 10.05.2023).
+
+\bibitem{js}
+\selectlanguageifdefined{russian}
+mdn web docs: JavaScript [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript} (дата
+  обращения 10.12.2023).
+
+\bibitem{nodejs}
+\selectlanguageifdefined{russian}
+Node.js documentation [Электронный ресурс].
+\newblock Режим доступа: \url{https://nodejs.org/docs/latest/api/}
+  (дата обращения 10.12.2023).
+
+\bibitem{Kotlin}
+\selectlanguageifdefined{russian}
+Kotlin language specification [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://kotlinlang.org/spec/introduction.html} (дата
+  обращения 09.10.2020).
+
+\bibitem{jvm}
+\selectlanguageifdefined{russian}
+Java Virtual Machine SE8 Specification [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://docs.oracle.com/javase/specs/jvms/se8/html/} (дата
+  обращения 08.09.2023).
 
 \end{thebibliography}
