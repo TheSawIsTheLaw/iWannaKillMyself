@@ -6,3 +6,5 @@
 *.aux
 *.synctex*
 *.blg
+
+dataset/Suicide_Detection.csv
