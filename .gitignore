@@ -1,10 +1,2 @@
-*.DS_Store*
-*.log
-*.out
-*.loc
-*.toc
-*.aux
-*.synctex*
-*.blg
-
-dataset/Suicide_Detection.csv
+*vscode*
+*DS_Store*
