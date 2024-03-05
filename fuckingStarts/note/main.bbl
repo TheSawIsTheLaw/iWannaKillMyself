@@ -44,6 +44,30 @@ WHO: Suicide [Электронный ресурс].
 \newblock М.: Юрайт, 2019.
 \newblock {с.}~330.
 
+\bibitem{integ}
+\selectlanguageifdefined{russian}
+В.А.~Аверин. Интегративный подход и
+  принципы психологии развития человека~//
+  Психология человека в образовании.
+\newblock 2019.
+\newblock {№}~3.
+
+\bibitem{starsen}
+\selectlanguageifdefined{russian}
+Г.В.~Старшенбаум. Клиническая психология.
+  Суицидология и кризисная терапия.
+\newblock М.: Когито-Центр, 2018.
+\newblock {с.}~376.
+
+\bibitem{grishina}
+\selectlanguageifdefined{russian}
+Е.В.~Гришина. Психологические
+  характеристики образовательной среды и
+  антивитальные переживания подростков~//
+  Народное образование.
+\newblock 2016.
+\newblock {№}~4.
+
 \bibitem{suicideStats}
 \selectlanguageifdefined{russian}
 Centers for Desiase Control and Prevention: Suicide Prevention
