@@ -1,6 +1,6 @@
 import re
 
-standart_dirt = 'хуй|бля|еб|пизд|ёб|хуё'
+standart_dirt = 'хуй|бля|пизд'
 
 def _get_search(pattern: str):
     """
