@@ -1,3 +1,5 @@
+import joblib
+
 
 choose_model_message = '''Выберите модель, которой хотите воспользоваться.
     1. Градиентный бустинг
@@ -60,6 +62,78 @@ def main():
 def getResult(model_choice, vectorizer_choice, message):
     print("Анализ выполняется...")
 
-    # вот тут вся эта жесть...
+    filename = ""
+
+    if (model_choice == 1):
+        filename += "gradient"
+    elif (model_choice == 2):
+        filename += "random"
+    elif (model_choice == 3):
+        filename += "svc"
+    elif (model_choice == 4):
+        filename += "knn"
+    elif (model_choice == 5):
+        filename += "logistic"
+    else:
+        filename += "perceptron"
+
+    if (vectorizer_choice == 1):
+        filename += "Bag"
+    else:
+        filename += "Bert"
+
+    filename += ".sav"
+
+    model = joblib.load("models/" + filename)
+
+    if (vectorizer_choice == 1):
+        vectorizer = joblib.load("vectorizers/bagVectorizer.sav")
+        vectorized_message = vectorizer.transform([getClearSentences(message)])
+    else:
+        vectorized_message = getBertVectorizedMessage(message) 
+
+    if (model.predict(vectorized_message)[0]):
+        print("\033[91m" + "Сообщение суицидальное" + "\033[0m")
+    else:
+        print("\033[92m" + "Сообщение не относится к суицидальным" + "\033[0m")
+
+    print()
+
+from pymorphy3 import MorphAnalyzer
+import nltk
+from nltk.corpus import stopwords
+
+an = MorphAnalyzer(lang='ru')
+stops = stopwords.words('russian')
+
+def getClearSentences(sentences):
+    return " ".join(str(s) + "" for s in (an.normal_forms(y)[0] for y in filter(lambda x: x not in stops, nltk.word_tokenize(str(sentences)))))
+
+import pandas as pd
+from transformers import BertTokenizer, BertModel
+from scipy.sparse import csr_matrix
+
+def getBertVectorizedMessage(message):
+    data = pd.read_csv("PreparedDatasets/shuffled.csv")
+    corpus = pd.concat([data['text'].apply(lambda x: getClearSentences(x)), pd.Series([getClearSentences(message)])])
+
+    tokenizer = BertTokenizer.from_pretrained('cointegrated/rubert-tiny2')
+
+    bert_tokenized = corpus.apply(lambda ser: tokenizer.convert_tokens_to_ids(tokenizer.tokenize(ser)))
+    bert_list = bert_tokenized.tolist()
+
+    nRows = len(bert_list)
+    nCols = max(max(row) if (len(row) > 0) else 0 for row in bert_list) + 1
+
+    dataIn = []
+    indices = []
+    indptr = [0]
+
+    for row in bert_list:
+        indices.extend(row)
+        dataIn.extend([1] * len(row))
+        indptr.append(len(indices))
+
+    return csr_matrix((dataIn, indices, indptr), shape=(nRows, nCols))[-1:]
 
 main()
