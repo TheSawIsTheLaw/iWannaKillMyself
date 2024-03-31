@@ -1,33 +1,18 @@
 import joblib
 
+import pandas as pd
+from transformers import BertTokenizer
+from scipy.sparse import csr_matrix
 
-choose_model_message = '''Выберите модель, которой хотите воспользоваться.
-    1. Градиентный бустинг
-    2. Случайный лес
-    3. Метод опорных векторов
-    4. К-ближайших соседей
-    5. Логистическая регрессия
-    6. Перцептрон
 
-    7. Выход
+from pymorphy3 import MorphAnalyzer
+import nltk
+from nltk.corpus import stopwords
 
-'''
-
-your_choice_message = "Ваш выбор: "
-
-choose_vectorization_message = '''Какую векторизацию использовать?
-    1. Bag of words (Default)
-    2. BERT
-
-'''
-
-give_us_message_message = "Введите сообщение, которое требуется проанализировать: "
-
-error_message_try_again = "Такой вариант отсутствует. Попробуйте снова."
+an = MorphAnalyzer(lang='ru')
+stops = stopwords.words('russian')
 
 def main():
-    print("Запуск средства распознавания суицидальных сообщений...")
-
     model_choice = 0
     while (model_choice != 7):
         model_choice = 0
@@ -41,6 +26,9 @@ def main():
                 next_available = model_choice >= 1 and model_choice <= 7
                 if (not next_available):
                     print(error_message_try_again)
+                else:
+                    print()
+                    print()
             except:
                 print(error_message_try_again)
         
@@ -50,6 +38,8 @@ def main():
             vectorizer_choice = 1
             try:
                 vectorizer_choice = int(input(your_choice_message))
+                print()
+                print()
             except:
                 pass
 
@@ -60,7 +50,7 @@ def main():
             print("Всего доброго!")
 
 def getResult(model_choice, vectorizer_choice, message):
-    print("Анализ выполняется...")
+    print("\033[96m" + "Анализ выполняется..." + "\033[0m")
 
     filename = ""
 
@@ -86,32 +76,25 @@ def getResult(model_choice, vectorizer_choice, message):
 
     model = joblib.load("models/" + filename)
 
-    if (vectorizer_choice == 1):
-        vectorizer = joblib.load("vectorizers/bagVectorizer.sav")
-        vectorized_message = vectorizer.transform([getClearSentences(message)])
-    else:
-        vectorized_message = getBertVectorizedMessage(message) 
+    try:
+        if (vectorizer_choice == 1):
+            vectorizer = joblib.load("vectorizers/bagVectorizer.sav")
+            vectorized_message = vectorizer.transform([getClearSentences(message)])
+        else:
+            vectorized_message = getBertVectorizedMessage(message) 
 
-    if (model.predict(vectorized_message)[0]):
-        print("\033[91m" + "Сообщение суицидальное" + "\033[0m")
-    else:
-        print("\033[92m" + "Сообщение не относится к суицидальным" + "\033[0m")
+        if (model.predict(vectorized_message)[0]):
+            print("\033[91m" + "Сообщение суицидальное" + "\033[0m")
+        else:
+            print("\033[92m" + "Сообщение не относится к суицидальным" + "\033[0m")
+    except:
+        print("\033[93m" + "Произошла ошибка во время исполнения. Вероятно, сообщение включает в себя неизвестные слова и его требуется внести в датасет." + "\033[0m")
+
 
     print()
 
-from pymorphy3 import MorphAnalyzer
-import nltk
-from nltk.corpus import stopwords
-
-an = MorphAnalyzer(lang='ru')
-stops = stopwords.words('russian')
-
 def getClearSentences(sentences):
     return " ".join(str(s) + "" for s in (an.normal_forms(y)[0] for y in filter(lambda x: x not in stops, nltk.word_tokenize(str(sentences)))))
-
-import pandas as pd
-from transformers import BertTokenizer, BertModel
-from scipy.sparse import csr_matrix
 
 def getBertVectorizedMessage(message):
     data = pd.read_csv("PreparedDatasets/shuffled.csv")
@@ -135,5 +118,29 @@ def getBertVectorizedMessage(message):
         indptr.append(len(indices))
 
     return csr_matrix((dataIn, indices, indptr), shape=(nRows, nCols))[-1:]
+
+choose_model_message = '''Выберите модель, которой хотите воспользоваться.
+    1. Градиентный бустинг
+    2. Случайный лес
+    3. Метод опорных векторов
+    4. К-ближайших соседей
+    5. Логистическая регрессия
+    6. Перцептрон
+
+    7. Выход
+
+'''
+
+your_choice_message = "Ваш выбор: "
+
+choose_vectorization_message = '''Какую векторизацию использовать?
+    1. Bag of words (Default)
+    2. BERT
+
+'''
+
+give_us_message_message = "Введите сообщение, которое требуется проанализировать: "
+
+error_message_try_again = "Такой вариант отсутствует. Попробуйте снова."
 
 main()
