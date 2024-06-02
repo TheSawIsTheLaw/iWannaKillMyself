@@ -14,16 +14,16 @@ stops = stopwords.words('russian')
 
 def main():
     model_choice = 0
-    while (model_choice != 7):
+    while (model_choice != 8):
         model_choice = 0
         print(choose_model_message)
 
-        next_available = model_choice >= 1 and model_choice <= 7
+        next_available = model_choice >= 1 and model_choice <= 8
 
         while (not next_available):
             try:
                 model_choice = int(input(your_choice_message))
-                next_available = model_choice >= 1 and model_choice <= 7
+                next_available = model_choice >= 1 and model_choice <= 8
                 if (not next_available):
                     print(error_message_try_again)
                 else:
@@ -32,16 +32,17 @@ def main():
             except:
                 print(error_message_try_again)
         
-        if (model_choice != 7):
-            print(choose_vectorization_message)
-
+        if (model_choice != 8):
             vectorizer_choice = 1
-            try:
-                vectorizer_choice = int(input(your_choice_message))
-                print()
-                print()
-            except:
-                pass
+            
+            if (model_choice != 7):
+                print(choose_vectorization_message)
+                try:
+                    vectorizer_choice = int(input(your_choice_message))
+                    print()
+                    print()
+                except:
+                    pass
 
             message = input(give_us_message_message)
             
@@ -50,8 +51,6 @@ def main():
             print("Всего доброго!")
 
 def getResult(model_choice, vectorizer_choice, message):
-    print("\033[96m" + "Анализ выполняется..." + "\033[0m")
-
     filename = ""
 
     if (model_choice == 1):
@@ -64,9 +63,15 @@ def getResult(model_choice, vectorizer_choice, message):
         filename += "knn"
     elif (model_choice == 5):
         filename += "logistic"
-    else:
+    elif (model_choice == 6):
         filename += "perceptron"
-
+    else:
+        for i in range(1, 7):
+            getResult(i, 1, message)
+            getResult(i, 2, message)
+        
+        return
+    
     if (vectorizer_choice == 1):
         filename += "Bag"
     else:
@@ -74,9 +79,11 @@ def getResult(model_choice, vectorizer_choice, message):
 
     filename += ".sav"
 
+    print("\033[96m" + "Загрузка модели..." + "\033[0m")
     model = joblib.load("models/" + filename)
 
     try:
+        print("\033[96m" + "В процессе анализ с использованием модели: " + getModelName(model_choice) + " (" + getVectorizationName(vectorizer_choice) + ")..." + "\033[0m")
         if (vectorizer_choice == 1):
             vectorizer = joblib.load("vectorizers/bagVectorizer.sav")
             vectorized_message = vectorizer.transform([getClearSentences(message)])
@@ -92,6 +99,35 @@ def getResult(model_choice, vectorizer_choice, message):
 
 
     print()
+
+def getModelName(model_choice):
+    name = ""
+
+    if (model_choice == 1):
+        name += "Градиентный бустинг"
+    elif (model_choice == 2):
+        name += "Случайный лес"
+    elif (model_choice == 3):
+        name += "Метод опорных векторов"
+    elif (model_choice == 4):
+        name += "k-ближайших соседей"
+    elif (model_choice == 5):
+        name += "Логистическая регрессия"
+    elif (model_choice == 6):
+        name += "Перцептрон"
+
+    return name
+
+def getVectorizationName(choice):
+    name = ""
+
+    if (choice == 1):
+        name += "Мешок слов"
+    else:
+        name += "BERT"
+
+    return name
+    
 
 def getClearSentences(sentences):
     return " ".join(str(s) + "" for s in (an.normal_forms(y)[0] for y in filter(lambda x: x not in stops, nltk.word_tokenize(str(sentences)))))
@@ -127,7 +163,9 @@ choose_model_message = '''Выберите модель, которой хоти
     5. Логистическая регрессия
     6. Перцептрон
 
-    7. Выход
+    7. Демонстрационный режим
+
+    8. Выход
 
 '''
 
