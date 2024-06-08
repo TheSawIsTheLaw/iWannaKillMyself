@@ -12,6 +12,9 @@
 \setmainfont{Times New Roman}
 \usepackage{float}
 
+% По результатам нормоконтроля:
+\renewcommand\labelitemi{---}
+
 %CERF
 \usepackage{array}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
@@ -44,20 +47,21 @@
 	\endtabular
 }
 
-% Переопределение стандартных \section, \subsection, \subsubsection по ГОСТу;
-% Переопределение их отступов до и после для 1.5 интервала во всем документе
+% Переопределение стандартных \section, \subsection, \subsubsection по нормоконтроллю...
 \usepackage{titlesec}
 
 \titleformat{\section}[block]
-{\bfseries\normalsize\filcenter}{\thesection}{1em}{}
+{\bfseries\normalsize}{\thesection}{1em}{}
+\titleformat{\section}{\Large\bfseries}{\thesection\quad}{20pt}{\Large\bfseries}
+\titlespacing\section{\parindent}{28pt}{28pt} 
 
 \titleformat{\subsection}[hang]
 {\bfseries\normalsize}{\thesubsection}{1em}{}
-\titlespacing\subsection{\parindent}{\parskip}{\parskip}
+\titlespacing\subsection{\parindent}{28pt}{28pt}
 
 \titleformat{\subsubsection}[hang]
 {\bfseries\normalsize}{\thesubsubsection}{1em}{}
-\titlespacing\subsubsection{\parindent}{\parskip}{\parskip}
+\titlespacing\subsubsection{\parindent}{28pt}{28pt}
 
 % Работа с изображениями и таблицами; переопределение названий по ГОСТу
 \usepackage{float}
@@ -66,9 +70,6 @@
 \frenchspacing
 \usepackage{caption}
 \usepackage{indentfirst} % Красная строка
-\usepackage{titlesec}
-\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{20pt}{\LARGE\bfseries}
-\titleformat{\section}{\centering\Large\bfseries}{\thesection\quad}{20pt}{\Large\bfseries}
 \usepackage{listings}
 
 % Выравнивание "где" по ГОСТу для формул
@@ -155,7 +156,7 @@
 \renewcommand\@biblabel[1]{#1.}
 \makeatother
 
-\captionsetup[figure]{name={Рисунок},labelsep=endash}
+\captionsetup[figure]{name={Рисунок},labelsep=endash, justification=centerlast}
 \captionsetup[table]{singlelinecheck=false, labelsep=endash, justification=centerfirst}
 
 \usepackage{color}
